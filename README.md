@@ -1,3 +1,5 @@
+Lista zakupow: https://docs.google.com/spreadsheets/d/1Lu5Gx6n4O0N0z3dGIrpB4y6J7f9GbAzjdtxqoyWebT8/edit?gid=0#gid=0
+
 # IPZ_Pojazd
 
 Projek jest podzielony na 3 elementy i każdy będzie miał poświęcony swój folder.
