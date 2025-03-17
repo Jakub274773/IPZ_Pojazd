@@ -20,6 +20,7 @@ Każdy silnik będzie napędzał 2 koła umieszczone po jednej stronie pojazdu. 
 z maksymalną prędkością ok. 21 m/min.
 Wstepny algorytm sterowania zakłada analizę odległości względem ściany prawej i lewej i dobranie odpowiedniego toru jazdy żeby poruszać się 
 między nimi. Algo wymaga optymalizacji względem wymiarów piętra oraz zabezpieczenia na wypadek dodatkowych przeszkód takich jak krzesła i kwiaty.
+Część mechaniczna będzie umieszczona od spodu pojazdu a część elektroniczna z lidarem i bateriami na górze. 
 
 
 
