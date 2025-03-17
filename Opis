@@ -1,1 +1,25 @@
-Wstępna geometria pojazdu została zaprojektowana. powstał zarys pojazdu zamodelowany w NX. Części drukowane z tworzywa
+Wstępna geometria pojazdu została zaprojektowana. Powstał zarys pojazdu zamodelowany w NX. Części drukowane z tworzywa to:
+- konstrukcja nośna,
+- mocowania silnika,
+- podpory wałów,
+- tuleje dystansowe.
+
+Zakupione zostaną:
+- zebatki przekładni pasowej,
+- pas napędowy,
+- koła,
+- drut(wałki napędowe).
+
+Z części elektronicznej zakupine zostaną:
+- baterie,
+- przetwornica,
+
+Rozwiązanie problemu kinemtyki pojazdu:
+Koła będą w stałej geometrii bez możliwości skrętu, ten z kolei będzie realizowany na takiej samej zasadzie jak pojazd gąsienicowy.
+Każdy silnik będzie napędzał 2 koła umieszczone po jednej stronie pojazdu. Wstępne obliczenia pokazują, że pojazd będzie się poruszał 
+z maksymalną prędkością ok. 21 m/min.
+Wstepny algorytm sterowania zakłada analizę odległości względem ściany prawej i lewej i dobranie odpowiedniego toru jazdy żeby poruszać się 
+między nimi. Algo wymaga optymalizacji względem wymiarów piętra oraz zabezpieczenia na wypadek dodatkowych przeszkód takich jak krzesła i kwiaty.
+
+
+
