@@ -17,6 +17,7 @@ button {
     border: none;
     font-size: 20px;
     font-weight: bold;
+    color: rgb(207, 207, 207);
 }
 
 button:hover {
