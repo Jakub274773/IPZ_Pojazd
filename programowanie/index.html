@@ -30,7 +30,10 @@
         </tr>
     </table>
 
-    <button>Start/stop</button>
+    <form action="{{ url_for('toggle') }}" method="post">
+    <button type="submit">Start/Stop</button>
+    </form>
+
 
 
 </body>
