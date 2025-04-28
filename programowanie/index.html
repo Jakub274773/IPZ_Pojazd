@@ -12,7 +12,7 @@
 <body>
 
     <h1>Autonomiczny Pojazd</h1>
-
+    <h2>Dane z całego przejazdu</h2>
     <table>
         <tr>
             <th>Id</th>
@@ -22,20 +22,54 @@
             <th>Bateria</th>
         </tr>
         <tr>
-            <td>{{id}}</td>
-            <td>{{srednia_predkosc}}</td>
-            <td>{{dystans}}</td>
-            <td>{{czas}}</td>
-            <td>{{zuzycie_bateria}}</td>
+            <td>1</td>
+            <td>20m/min</td>
+            <td>28m</td>
+            <td>1,5min</td>
+            <td>70%</td>
         </tr>
     </table>
+    <h2>Dane na bierząco</h2>
+    <table>
+        <tr>
+            <th>Średnia prędkość</th>
+            <th>Dystans</th>
+            <th>Czas</th>
+            <th>Bateria</th>
+        </tr>
+        <tr>
+            <td id="prd">0</td>
+            <td id="dystans">0</td>
+            <td id="czas">0</td>
+            <td id="bateria">0</td>
+        </tr>
+    </table>
+    <button>Start/stop</button>
 
-    <form action="{{ url_for('toggle') }}" method="post">
-    <button type="submit">Start/Stop</button>
-    </form>
+    <div class="uzytkownicy">
+        <label for="">
+            <input type="text" placeholder="Imię">
+            <input type="text" placeholder="Nazwisko">
+            <button type="submit">Dodaj użytkownika</button>
+        </label>
+        <table>
+            <tr>
+                <th>id</th>
+                <th>Imię</th>
+                <th>Nazwisko</th>
+            </tr>
+            <tr>
+                <td>-</td>
+                <td>-</td>
+                <td>-</td>
+            </tr>
+        </table>
+
+    </div>
 
 
 
+    <script src="app.js"></script>
 </body>
 
 </html>
