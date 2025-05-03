@@ -184,10 +184,10 @@ const update = () => {
     fetch('/dane')
         .then(response => response.json())
         .then(data => {
-            speedValue.value = prd;
-            distanceValue.value = dst;
-            timeValue.value = time;
-            bateryLevel.value = batery;
+            speedValue.value = data.predkosc;
+            distanceValue.value = data.dystans;
+            timeValue.value = data.czas;
+            bateryLevel.value = data.bateria;
         })
         .catch(err => console.error("Błąd pobierania danych:", err));
 };
