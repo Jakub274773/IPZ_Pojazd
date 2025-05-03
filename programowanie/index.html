@@ -47,11 +47,12 @@
     <button>Start/stop</button>
 
     <div class="uzytkownicy">
-        <label for="">
-            <input type="text" placeholder="Imię">
-            <input type="text" placeholder="Nazwisko">
+        <form>
+            <input id="imie" type="text" placeholder="Imię" required>
+            <input id="nazwisko" type="text" placeholder="Nazwisko" required>
             <button type="submit">Dodaj użytkownika</button>
-        </label>
+        </form>
+        <h2>Tabela użytkowników</h2>
         <table>
             <tr>
                 <th>id</th>
