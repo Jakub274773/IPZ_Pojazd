@@ -1,9 +1,15 @@
 from operator import indexOf
-
+import RPi.GPIO as GPIO
 import time
 import requests
 from rplidar import RPLidar
 PORT_NAME = '/dev/ttyUSB0'
+
+GPIO.setmode(GPIO.BCM)
+GPIO.setup(17, GPIO.OUT)
+GPIO.setup(22, GPIO.OUT)
+left = GPIO.PWM(17, 1000)
+right = GPIO.PWM(22, 1000)
 
 #zmienne i tablice
 status = False
@@ -113,11 +119,14 @@ def control_motors():
 
     match direction:
         case "left":
-            pass
+            left.ChangeDutyCycle(60)
+            right.ChangeDutyCycle(90)
         case "right":
-            pass
+            left.ChangeDutyCycle(90)
+            right.ChangeDutyCycle(60)
         case "forward":
-            pass
+            left.ChangeDutyCycle(90)
+            right.ChangeDutyCycle(90)
 
 
 def send_data_local():
@@ -138,6 +147,7 @@ def send_data_local():
         print("Błąd połączenia:", e)
 
 def send_data_global():
+    global is_send
     if not is_send:
         #wysłać
         is_send = True
