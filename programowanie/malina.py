@@ -5,11 +5,7 @@ import requests
 from rplidar import RPLidar
 PORT_NAME = '/dev/ttyUSB0'
 
-GPIO.setmode(GPIO.BCM)
-GPIO.setup(17, GPIO.OUT)
-GPIO.setup(22, GPIO.OUT)
-left = GPIO.PWM(17, 1000)
-right = GPIO.PWM(22, 1000)
+
 
 #zmienne i tablice
 status = False
@@ -29,6 +25,12 @@ c_bateria = 0
 
 # Adres Twojego serwera Flask (zmień na IP serwera!)
 SERVER_URL = "http://192.168.1.100:5000/aktualizuj"
+
+def init():
+    GPIO.setmode(GPIO.BCM)
+    GPIO.setup(17, GPIO.OUT)
+    GPIO.setup(22, GPIO.OUT)
+
 
 def get_status():
     try:
@@ -119,14 +121,23 @@ def control_motors():
 
     match direction:
         case "left":
-            left.ChangeDutyCycle(60)
-            right.ChangeDutyCycle(90)
+            GPIO.output(17, GPIO.HIGH)
+            GPIO.output(22, GPIO.HIGH)
+            time.sleep(0.002)
+            GPIO.output(17, GPIO.HIGH)
+            GPIO.output(22, GPIO.LOW)
+            time.sleep(0.001)
         case "right":
-            left.ChangeDutyCycle(90)
-            right.ChangeDutyCycle(60)
+            GPIO.output(17, GPIO.HIGH)
+            GPIO.output(22, GPIO.HIGH)
+            time.sleep(0.002)
+            GPIO.output(17, GPIO.LOW)
+            GPIO.output(22, GPIO.HIGH)
+            time.sleep(0.001)
         case "forward":
-            left.ChangeDutyCycle(90)
-            right.ChangeDutyCycle(90)
+            GPIO.output(17, GPIO.HIGH)
+            GPIO.output(22, GPIO.HIGH)
+            time.sleep(0.003)
 
 
 def send_data_local():
@@ -156,6 +167,7 @@ def send_data_global():
 ### Pętla główna ###
 if __name__ == '__main__':
     try:
+        init()
         while True:
             get_status()
             if status:
